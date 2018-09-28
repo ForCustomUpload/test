@@ -1,7 +1,7 @@
 ﻿If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
 
 {   
-Start-Process powershell -Verb runAs -ArgumentList '-ExecutionPolicy Bypass -command [xml]$myXML = Get-Content ${env:ProgramFiles(x86)}\"\SmartSoft\SmartSoft Invoices Automated Clients\SsiAutoClientManager.exe.config\";
+Start-Process powershell -Verb runAs -ArgumentList '-command [xml]$myXML = Get-Content ${env:ProgramFiles(x86)}\"\SmartSoft\SmartSoft Invoices Automated Clients\SsiAutoClientManager.exe.config\";
 cd ${env:ProgramFiles(x86)}\"\SmartSoft\SmartSoft Invoices Automated Clients\";
 [string]$ImgCount="0";
 [string]$OcrCount="8";
